@@ -1,0 +1,38 @@
+To retrive metadata from Dev org or sandbox into VS code
+
+---> sfdx force:mdapi:retrieve -u (username) -k manifest/package.xml -r (retriveve file name) 
+
+To convert sfdx metadata to source format
+
+---> sfdx force:mdapi:convert --rootdir (folder from which you are converting)
+--outputdir (new folder to put output)
+
+To create new scratch org by using another Dev Hub username 
+
+---> sfdx force:org:create -a <Aliase Name> -f config/project-scratch-def.json -d <days> -v <Another Dev Hub Username>
+
+To set created org as a default org 
+
+---> sfdx force:config:set defaultusername=<username> 
+
+To convert source format to metadata format
+
+---> sfdx force:source:convert -r <dir path (optional)> -d <folder name> -n <package name (optional)> 
+
+To open scratch org
+
+---> sf force:org:open -u <name>
+
+To deploy metadata from scratch org to production/sandbox org
+
+---> sfdx force:mdapi:deploy -d <dir name or folder name> -u <username of snadbox or production org>
+
+To authenticate prod org or Sandbox while deploying
+
+---> sfdx force:auth:web:login -r https://test.salesforce.com or https://login.salesforce.com -a <alias>
+
+To open an org
+
+---> sfdx force:org:open -u <username>
+
+ 
