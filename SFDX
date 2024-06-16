@@ -35,6 +35,36 @@ To open an org
 
 ---> sfdx force:org:open -u <username>
 
+To generate password for Scratch Org 
 
+---> sfdx force:user:password:generate-u <username>
 
- 
+To create new user in Scratch org
+
+---> sfdx force:user:create -a <alias> -f <file path of json>
+
+To transfer user to diff org when scratch org expired
+
+--->  sfdx force:user:create -a <alias> -f <file path of json>
+
+To export data from scratch org to another scratch org 
+
+---> sfdx force:data:tree:export -q <query to export data> -d <new dir>
+
+In case of md relation 
+
+---> sfdx force:data:tree:export -q "<relation query>" -d <dir> -p <plan for relation>
+
+To import data 
+
+---> sfdx force:data:tree:import -u <username> -f <file>, <another file>
+
+ To import relation data
+
+---> sfdx force:data:tree:import -u <username> -p <plan file>
+
+***** Cannot use -f and -p together in single commond
+
+***** limits while importing and exporting data... 
+      while importing....200 records
+      while exporting....2000 records 
